@@ -1,0 +1,63 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    outline: none !important;
+}
+h1{
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+p{
+    position: relative;
+    z-index: 2;
+}
+.h1 {
+    @mixin h1;
+}
+
+.h2, h2 {
+    @mixin h2;
+}
+
+.h3 {
+    @mixin h3;
+}
+
+.h4 {
+    @mixin h4;
+}
+
+.p {
+    @mixin p;
+}
+
+.ul {
+    @mixin ul;
+}
+
+.ol {
+    @mixin ol;
+}
+
+.hr {
+    @mixin hr;
+}
+
+.a,
+a {
+    @mixin a;
+    /*@mixin a--color $color-base;*/
+}
+body{
+    font-size: var(--base-fz);
+    line-height: var(--base-lh);
+    background: var(--color-black);
+    font-family: var(--font-family-base);
+    color: var(--color-white)
+}
+
+.button {
+    @mixin button;
+}

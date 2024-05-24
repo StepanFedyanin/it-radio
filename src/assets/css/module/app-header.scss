@@ -1,0 +1,53 @@
+.header {
+    padding-top: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    &__logo {
+        position: relative;
+        width: 220px;
+        height: 43px;
+        margin-right: auto;
+    }
+    &__menu{
+        display: flex;
+        align-items: center;
+        &-item{
+        }
+        &-link{
+            padding: 0 10px;
+            margin: 0 15px;
+            text-transform: uppercase;
+            &.is-subactive{
+                color: transparent;
+                -webkit-background-clip: text;
+                background-image: linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            }
+        }
+        &-btn{
+            &.m--arrow{
+                &::after{
+                    margin-left: 10px;
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background:  svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+                    background-size: cover;
+                    transition: background 0.3s ease, width 0.3s ease;
+                }
+                &:hover::after{
+                    background:  svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
+
+                }
+                &:active::after{
+                    width: 45px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+}

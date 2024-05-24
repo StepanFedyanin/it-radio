@@ -1,0 +1,19 @@
+.app{
+    &:after{
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: url("./assets/img/bg/bg.svg");
+        z-index: 1;
+    }
+    &__block{
+
+    }
+    &__content{
+        max-width: 1420px;
+        margin: 0 auto;
+    }
+}
