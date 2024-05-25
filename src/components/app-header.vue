@@ -34,22 +34,22 @@ export default {
 					title: 'О нас'
 				},
 				{
-					name: 'home',
+					name: 'rubric',
 					role: 'all',
 					title: 'Рубрики'
 				},
 				{
-					name: 'home',
+					name: 'playlists',
 					role: 'all',
 					title: 'Плейлист'
 				},
 				{
-					name: 'home',
+					name: 'support',
 					role: 'all',
 					title: 'Поддержка'
 				},
 				{
-					name: 'home',
+					name: 'contacts',
 					role: 'all',
 					title: 'Контакты'
 				},

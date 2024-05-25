@@ -13,7 +13,7 @@
 
     }
     &__content{
-        max-width: 1420px;
+        max-width: var(--container);
         margin: 0 auto;
     }
 }

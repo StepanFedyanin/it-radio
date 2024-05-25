@@ -1,4 +1,8 @@
 import home from "@/views/home.vue";
+import rubric from "@/views/rubric.vue";
+import playlists from "@/views/playlists.vue";
+import support from "@/views/support.vue";
+import contacts from "@/views/contacts.vue";
 
 
 const routes = [
@@ -10,7 +14,42 @@ const routes = [
             title: '',
            isAuth: false
         },
-        props: true
+    },
+    {
+        path: '/rubric',
+        name: 'rubric',
+        component: rubric,
+        meta: {
+            title: '',
+            isAuth: false
+        },
+    },
+    {
+        path: '/playlists',
+        name: 'playlists',
+        component: playlists,
+        meta: {
+            title: '',
+            isAuth: false
+        },
+    },
+    {
+        path: '/support',
+        name: 'support',
+        component: support,
+        meta: {
+            title: '',
+            isAuth: false
+        },
+    },
+    {
+        path: '/contacts',
+        name: 'contacts',
+        component: contacts,
+        meta: {
+            title: '',
+            isAuth: false
+        },
     },
     // {
     //     path: '/error500',

@@ -9,9 +9,8 @@ h1{
     position: relative;
     z-index: 2;
 }
-p{
-    position: relative;
-    z-index: 2;
+.text{
+    @mixin p;
 }
 .h1 {
     @mixin h1;
@@ -31,6 +30,14 @@ p{
 
 .p {
     @mixin p;
+}
+
+.title {
+    @mixin p;
+    color: transparent;
+    background-clip: text;
+    background-image: var(--linear-gradient);
+    font-size: 34px;
 }
 
 .ul {
