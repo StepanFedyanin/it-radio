@@ -56,7 +56,26 @@
                 </div>
             </div>
         </div>
-        <team/>
+        <Team/>
+        <div class="app__content">
+            <RubricBlock/>
+        </div>
+        <div class="home__social">
+            <div class="home__social--tools">
+                <div class="home__social--description">
+                    <h2 class="h2 m--white">Соц сети</h2>
+                    <div class="text">
+                        Следите за обновлениями и новыми постами на IT Radio, чтобы быть в курсе последних новостей и событий в мире IT, а также следить за анонсами и обновлениями!
+                    </div>
+                </div>
+                <div class="home__social--btns">
+                    <button class="button m--blur">Telegram</button>
+                    <button class="button m--blur">VKontakte</button>
+                    <button class="button m--blur">Instagram</button>
+                    <button class="button m--blur">YouTube</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -64,10 +83,11 @@
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Team from "@/components/team.vue";
+import RubricBlock from "components/rubric-block.vue";
 
 export default {
     name: 'home',
-    components: {Team},
+    components: {RubricBlock, Team},
     created() {
     },
     mounted() {
@@ -89,7 +109,7 @@ export default {
             );
             gsap.to(this.$refs.targetTitle, {
                     color: 'transparent',
-                    backgroundImage: 'linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%)',
+                    backgroundImage: 'linear-gradient(91.17deg, #C6F1F7 -4.01%, #F983E9 36.14%, #B877FF 77.44%, #C2E9CD 106.11%)',
                     scrollTrigger: {
                         trigger: this.$refs.targetWrapper,
                         scrub: true,

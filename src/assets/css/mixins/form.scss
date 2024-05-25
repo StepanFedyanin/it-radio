@@ -1,41 +1,83 @@
 @define-mixin button {
-    font-family: var(--font-family-base);
+  font-family: var(--font-family-base);
 
-    color: var(--color-white);
-    min-width: 220px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    vertical-align: middle;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    line-height: 1rem;
-    border-radius: 100px;
-    cursor: pointer;
-    border: 1px solid var(--color-white);
-    min-height: 3rem;
-    transition: border 0.5s ease, background 0.5s ease, color 0.5s ease;
-    background: transparent;
+  color: var(--color-white);
+  min-width: 220px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 1px solid var(--color-white);
+  min-height: 3rem;
+  transition: border 0.5s ease, background 0.5s ease, color 0.5s ease;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  &:hover {
+    cursor: url("./assets/img/icon/cursor.svg"), auto;
+    color: var(--color-black);
+    background: var(--color-white);
+  }
 
-    &:hover{
-        cursor: url("./assets/img/icon/cursor.svg"), auto;
-        color: var(--color-black);
-        background: var(--color-white);
-    }
-    &:active{
-        cursor: url("./assets/img/icon/cursor.svg"), auto;
-        color: var(--color-black);
-        background: var(--color-white-darker);
-    }
-    &:disabled {
-        cursor: not-allowed;
-        opacity: 0.4;
+  &:active {
+    cursor: url("./assets/img/icon/cursor.svg"), auto;
+    color: var(--color-black);
+    background: var(--color-white-darker);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  &:active:not(:disabled) {
+  }
+
+  &.m--blur {
+    min-width: 0;
+    padding: 1rem 1.5rem;
+    background: var(--bg-opacity);
+    border: none;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+      background: var(--color-white);
     }
 
-    &:active:not(:disabled) {
+    &:active {
+      color: var(--color-white);
+      background: transparent;
+      backdrop-filter: blur(5px);
     }
+  }
+
+  &.m--arrow {
+    &::after {
+      margin-left: 10px;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+      background-size: cover;
+      transition: background 0.3s ease, width 0.3s ease;
+    }
+
+    &:hover::after {
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
+    }
+
+    &:active::after {
+      width: 45px;
+      height: 20px;
+    }
+  }
 }

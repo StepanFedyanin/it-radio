@@ -16,7 +16,7 @@
 					>
 						{{ item.title }}
 					</router-link>
-					<button v-else class="button header__menu-btn" :class="item.icon">{{ item.title }}</button>
+					<button v-else class="button" :class="item.icon">{{ item.title }}</button>
 				</li>
 		</ul>
 	</div>

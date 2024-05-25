@@ -50,3 +50,8 @@ input, textarea, select {
     font-size: inherit;
     font-weight: inherit;
 }
+
+img{
+    width: 100%;
+    max-width: 100%;
+}

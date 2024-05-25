@@ -53,7 +53,12 @@
   padding-bottom: 6px;
   background-clip: text;
   background-image: var(--linear-gradient);
+  text-transform: uppercase;
 
+  &.m--white{
+    color: var(--color-white);
+    margin: 1.5rem 0;
+  }
   &.m--border {
     &:after {
       margin-top: 10px;
