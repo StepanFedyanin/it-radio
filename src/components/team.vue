@@ -79,7 +79,7 @@
             <div class="team__progress" ref="progressBar">
                 <span></span>
             </div>
-            <router-link to="#" class="team__link">
+            <router-link to="#" class="m--link">
                 Больше о нас
             </router-link>
         </div>

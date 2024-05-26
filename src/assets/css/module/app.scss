@@ -1,4 +1,5 @@
 .app{
+    //background: url("./assets/img/bg/bg.svg");
     &:after{
         content: '';
         position: fixed;
@@ -6,7 +7,7 @@
         left: 0;
         bottom: 0;
         right: 0;
-        background: url("./assets/img/bg/bg.svg");
+        //background: url("./assets/img/bg/bg.svg");
         z-index: 1;
     }
     &__block{
@@ -15,5 +16,8 @@
     &__content{
         max-width: var(--container);
         margin: 0 auto;
+        .m--indentation{
+            padding-top: ;
+        }
     }
 }

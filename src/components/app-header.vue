@@ -1,6 +1,6 @@
 <template>
 	<div class="app__content header">
-		<div class="header__logo">
+		<div class="header__logo" @click="next('home')">
 			<img src="@/assets/img/icon/logo.svg" alt="logo"/>
 		</div>
 		<ul class="header__menu">
@@ -16,7 +16,7 @@
 					>
 						{{ item.title }}
 					</router-link>
-					<button v-else class="button" :class="item.icon">{{ item.title }}</button>
+					<button v-else class="button" :class="[item.icon, showAuthentication&&'m--active']" @click="handlerClick(item.action)">{{ item.title }}</button>
 				</li>
 		</ul>
 	</div>
@@ -25,6 +25,14 @@
 <script>
 export default {
 	name: 'app-header',
+    props:{
+        showAuthentication:{
+            type: Boolean,
+            default(){
+                return false
+            }
+        }
+    },
 	data(){
 		return{
 			menu:[
@@ -43,6 +51,11 @@ export default {
 					role: 'all',
 					title: 'Плейлист'
 				},
+                {
+                    name: 'podcasts',
+                    role: 'all',
+                    title: 'Подкасты'
+                },
 				{
 					name: 'support',
 					role: 'all',
@@ -62,6 +75,16 @@ export default {
 				},
 			]
 		}
-	}
+	},
+    methods:{
+        handlerClick(methods){
+            if (methods==='login'){
+                this.$emit('shopAuthentication', true)
+            }
+        },
+        next(name){
+            this.$router.push({name})
+        }
+    }
 }
 </script>

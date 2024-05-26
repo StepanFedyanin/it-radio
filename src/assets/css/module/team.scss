@@ -1,7 +1,7 @@
 .team {
   margin-left: auto;
   max-width: calc(100vw - ((100vw - var(--container)) / 2));
-  margin-bottom: 8.75rem;
+  margin-bottom: var(--space-between-sections);
   position: relative;
   z-index: 2;
 
@@ -51,23 +51,6 @@
       width: 100%;
       height: 100%;
       transform-origin: left top;
-    }
-  }
-
-  &__link {
-    display: flex;
-    align-items: center;
-    &::after{
-      margin-left: 10px;
-      content: '';
-      width: 20px;
-      height: 20px;
-      background:  svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
-      background-size: cover;
-      transition: background 0.3s ease, width 0.3s ease;
-    }
-    &:hover::after{
-      width: 40px;
     }
   }
 

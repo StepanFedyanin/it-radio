@@ -1,7 +1,7 @@
 <template>
     <div class="home">
-        <div class="app__content">
-            <div class="home__meaning" ref="targetWrapper">
+        <div class="home__meaning" ref="targetWrapper">
+            <div class="app__content">
                 <p class="home__subtitle">
                     Мы — <span>диджитал радио</span><br/>
                     Помогаем чему-то решить задачи в интернете.<br/>
@@ -14,9 +14,11 @@
                     <span id="targetTitleSpan">про  сферу</span> технологий<br/>
                     и развитие <span id="targetTitleSpan">в IT</span><br/>
                 </h1>
-                <div class="home__banner" ref="target">
-                </div>
             </div>
+            <div class="home__banner" ref="target">
+            </div>
+        </div>
+        <div class="app__content">
 
             <div class="home__description">
                 <div class="home__info">
@@ -43,7 +45,8 @@
                 <div class="home__content">
                     <div class="home__content--item m--one-circle">
                         <span class="title">Музыка</span>
-                        Нам важно создать комфортную атмосферу, которая поможет сосредоточиться на задачах и улучшит продуктивность.
+                        Нам важно создать комфортную атмосферу, которая поможет сосредоточиться на задачах и улучшит
+                        продуктивность.
                     </div>
                     <div class="home__content--item m--two-circle">
                         <span class="title">Подкасты</span>
@@ -65,7 +68,8 @@
                 <div class="home__social--description">
                     <h2 class="h2 m--white">Соц сети</h2>
                     <div class="text">
-                        Следите за обновлениями и новыми постами на IT Radio, чтобы быть в курсе последних новостей и событий в мире IT, а также следить за анонсами и обновлениями!
+                        Следите за обновлениями и новыми постами на IT Radio, чтобы быть в курсе последних новостей и
+                        событий в мире IT, а также следить за анонсами и обновлениями!
                     </div>
                 </div>
                 <div class="home__social--btns">
@@ -76,6 +80,9 @@
                 </div>
             </div>
         </div>
+        <div class="app__content">
+            <blog/>
+        </div>
     </div>
 </template>
 
@@ -84,10 +91,11 @@ import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Team from "@/components/team.vue";
 import RubricBlock from "components/rubric-block.vue";
+import Blog from "components/blog.vue";
 
 export default {
     name: 'home',
-    components: {RubricBlock, Team},
+    components: {Blog, RubricBlock, Team},
     created() {
     },
     mounted() {

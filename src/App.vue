@@ -1,29 +1,36 @@
 <template>
     <div class="app">
-        <AppHeader/>
+        <AppHeader :showAuthentication="showAuthentication" @shopAuthentication="changeShowAuthentication"/>
         <div class="app__block">
             <Page404 v-if="showErrorPage404"/>
             <Page500 v-if="showErrorPage500"/>
             <routerView v-else/>
         </div>
+        <AppFooter/>
     </div>
+    <Authentication :showModal="showAuthentication" @hideModal="changeShowAuthentication"/>
 </template>
 
 <script>
 import Page404 from '@/views/Page404.vue';
 import Page500 from '@/views/Page500.vue';
 import AppHeader from "@/components/app-header.vue";
+import AppFooter from "@/components/app-footer.vue";
+import Authentication from "@/components/authentication.vue";
 
 export default {
     async preFetch({store, currentRoute, previousRoute, redirect, ssrContext, urlPath, publicPath}) {
     },
     components: {
+        Authentication,
+        AppFooter,
         AppHeader,
         Page404,
         Page500,
     },
     data() {
         return {
+            showAuthentication: false,
             showSidebarBlock: false,
         };
     },
@@ -45,7 +52,11 @@ export default {
     },
     mounted() {
     },
-    methods: {}
+    methods: {
+        changeShowAuthentication(value) {
+            this.showAuthentication = value;
+        }
+    }
 };
 </script>
 <style>

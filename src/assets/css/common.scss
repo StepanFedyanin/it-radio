@@ -38,6 +38,9 @@ h1{
     background-clip: text;
     background-image: var(--linear-gradient);
     font-size: 34px;
+    &.m--white{
+        color: var(--color-white);
+    }
 }
 
 .ul {
@@ -57,12 +60,19 @@ a {
     @mixin a;
     /*@mixin a--color $color-base;*/
 }
+
+html{
+    scrollbar-color: var(--color-black) var(--color-white-opacity);
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+}
 body{
     font-size: var(--base-fz);
     line-height: var(--base-lh);
     background: var(--color-black);
     font-family: var(--font-family-base);
-    color: var(--color-white)
+    color: var(--color-white);
+    padding: 0 !important;
 }
 
 .button {

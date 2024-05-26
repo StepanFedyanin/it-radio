@@ -3,6 +3,7 @@ import rubric from "@/views/rubric.vue";
 import playlists from "@/views/playlists.vue";
 import support from "@/views/support.vue";
 import contacts from "@/views/contacts.vue";
+import podcasts from "@/views/podcasts.vue";
 
 
 const routes = [
@@ -28,6 +29,15 @@ const routes = [
         path: '/playlists',
         name: 'playlists',
         component: playlists,
+        meta: {
+            title: '',
+            isAuth: false
+        },
+    },
+    {
+        path: '/podcasts',
+        name: 'podcasts',
+        component: podcasts,
         meta: {
             title: '',
             isAuth: false

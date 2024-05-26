@@ -55,10 +55,11 @@
   background-image: var(--linear-gradient);
   text-transform: uppercase;
 
-  &.m--white{
+  &.m--white {
     color: var(--color-white);
     margin: 1.5rem 0;
   }
+
   &.m--border {
     &:after {
       margin-top: 10px;
@@ -105,7 +106,6 @@
 
 @define-mixin p {
   @mixin __p;
-
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -191,15 +191,45 @@
 
 @define-mixin a {
   text-decoration: none;
-  color: var(--color-white);
   font-weight: 500;
   transition: all 0.5s ease;
+  color: var(--color-white);
+  position: relative;
+  z-index: 2;
   &:hover {
     color: transparent;
     -webkit-background-clip: text;
-    background-image: linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-image: var(--linear-gradient);
     cursor: url("./assets/img/icon/cursor.svg"), auto;
     text-decoration: none;
+  }
+
+  &.m--link {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+
+    &::after {
+      margin-left: 10px;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+      background-size: cover;
+      transition: background 0.3s ease, width 0.3s ease;
+    }
+
+    &:hover {
+      color: var(--color-white);
+      border-bottom: 1px solid var(--color-white);
+    }
+
+    &:hover::after {
+      width: 40px;
+    }
+  }
+  &.m--underline{
+    text-decoration: underline;
   }
 }
 

@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  margin-bottom: 40px;
+  &.m--btns{
+    gap: 10px;
+  }
+  &__item {
+    border: none;
+    background: none;
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-right: 10px;
+    position: relative;
+    display: flex;
+    padding: 0;
+    transition: all 0.5s ease;
+
+    &:after {
+      content: '';
+      display: block;
+      background: var(--color-white);
+      border-radius: 20px;
+      height: 100%;
+      width: 3px;
+      margin-left: 10px;
+    }
+
+    &:last-child {
+      margin: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.is-active, &:hover {
+      color: transparent;
+      -webkit-background-clip: text;
+      background-image: var(--linear-gradient);
+      cursor: url("./assets/img/icon/cursor.svg"), auto;
+    }
+  }
+}

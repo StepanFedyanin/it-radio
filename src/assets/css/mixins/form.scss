@@ -1,3 +1,12 @@
+@define-mixin input {
+  background: transparent;
+  border: 1px solid var(--color-white);
+  border-radius: 40px;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
 @define-mixin button {
   font-family: var(--font-family-base);
 
@@ -27,7 +36,7 @@
     color: var(--color-black);
     background: var(--color-white);
   }
-
+  &.is-active,
   &:active {
     cursor: url("./assets/img/icon/cursor.svg"), auto;
     color: var(--color-black);
@@ -40,6 +49,10 @@
   }
 
   &:active:not(:disabled) {
+  }
+
+  &.m--fit-content {
+    width: fit-content;
   }
 
   &.m--blur {
@@ -75,9 +88,81 @@
       background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
     }
 
+    &.m--active::after,
     &:active::after {
       width: 45px;
       height: 20px;
     }
+  }
+
+  &.m--w-100 {
+    width: 100%;
+  }
+
+  &.m--white {
+    color: var(--color-black);
+    background: var(--color-white-darker);
+
+    &:hover {
+      color: var(--color-white);
+      background: transparent;
+    }
+
+    &.m--arrow {
+      &::after {
+        content: '';
+        background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
+        background-size: cover;
+        transition: background 0.3s ease, width 0.3s ease;
+      }
+
+      &:hover::after {
+        background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFFFF) no-repeat 100%;
+      }
+    }
+  }
+
+  &.m--circle {
+    width: 56px;
+    height: 56px;
+    min-width: 0;
+    border-color: var(--color-white-opacity);
+    overflow: hidden;
+
+    &:before {
+      background: var(--linear-gradient);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 18px;
+      height: 18px;
+      margin: auto auto;
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#404145FF) no-repeat 100%;
+      transform: rotate(-45deg);
+    }
+
+    &:hover:before {
+      opacity: 1;
+      cursor: url("./assets/img/icon/cursor.svg"), auto;
+    }
+
+    &:hover:after {
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+    }
+
   }
 }

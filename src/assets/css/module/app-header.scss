@@ -11,6 +11,9 @@
         width: 220px;
         height: 43px;
         margin-right: auto;
+        &:hover{
+            cursor: url("./assets/img/icon/cursor.svg"), auto;
+        }
     }
     &__menu{
         display: flex;

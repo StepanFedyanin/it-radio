@@ -1,0 +1,55 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin: 0 5px;
+
+  }
+
+  &__link {
+    padding: 0 5px;
+    &.m--current{
+      color: transparent;
+      -webkit-background-clip: text;
+      background-image: var(--linear-gradient);
+    }
+  }
+
+  &__btn {
+    min-height: 25px;
+    min-width: 25px;
+    position: relative;
+    border-radius: 50%;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 5px;
+    }
+    &:hover{
+      background: var(--color-white);
+    }
+    &.m--prev:after {
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+      transform: rotate(180deg);
+    }
+    &.m--prev:hover:after{
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
+    }
+    &.m--next:after {
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#FFFF) no-repeat 100%;
+    }
+    &.m--next:hover:after{
+      background: svg-load('./assets/img/icon/ArrowRight.svg', stroke=#232323) no-repeat 100%;
+    }
+  }
+}
