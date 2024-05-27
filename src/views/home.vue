@@ -2,7 +2,7 @@
     <div class="home">
         <div class="home__meaning" ref="targetWrapper">
             <div class="app__content">
-                <p class="home__subtitle">
+                <p class="text home__subtitle">
                     Мы — <span>диджитал радио</span><br/>
                     Помогаем чему-то решить задачи в интернете.<br/>
                     Находимся в Челябинске. <span>Работаем по всей России и Миру.</span><br/>
@@ -126,20 +126,6 @@ export default {
                     },
                 },
             );
-            const collageItems = Array.from(document.querySelectorAll("#targetTitleSpan"));
-            collageItems.forEach((elem) => {
-                gsap.to(elem, {
-                        color: '#232323',
-                        webkitTextStroke: '3px transparent',
-                        scrollTrigger: {
-                            trigger: this.$refs.targetWrapper,
-                            scrub: true,
-                            start: 0,
-                            end: 600,
-                        },
-                    },
-                )
-            });
         }
     }
 }

@@ -1,16 +1,17 @@
 <template>
-	<div class="app__content header">
-		<div class="header__logo" @click="next('home')">
-			<img src="@/assets/img/icon/logo.svg" alt="logo"/>
-		</div>
-		<ul class="header__menu">
-			<li
-				v-for="(item, key) in menu"
-				:key="key"
-				:class="['header__menu-item', item.class]"
+	<div class="header">
+		<div class="app__content header__wrapper">
+			<div class="header__logo" @click="next('home')">
+				<img src="@/assets/img/icon/logo.svg" alt="logo"/>
+			</div>
+			<ul class="header__menu">
+				<li
+					v-for="(item, key) in menu"
+					:key="key"
+					:class="['header__menu-item', item.class]"
 				>
 					<router-link
-					v-if="!item.action"
+						v-if="!item.action"
 						:to="{ name: item.name, params: item.params }"
 						class="header__menu-link"
 					>
@@ -18,7 +19,8 @@
 					</router-link>
 					<button v-else class="button" :class="[item.icon, showAuthentication&&'m--active']" @click="handlerClick(item.action)">{{ item.title }}</button>
 				</li>
-		</ul>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -37,7 +39,7 @@ export default {
 		return{
 			menu:[
 				{
-					name: 'home',
+					name: 'about',
 					role: 'all',
 					title: 'О нас'
 				},

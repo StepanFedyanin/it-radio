@@ -4,6 +4,7 @@ import playlists from "@/views/playlists.vue";
 import support from "@/views/support.vue";
 import contacts from "@/views/contacts.vue";
 import podcasts from "@/views/podcasts.vue";
+import about from "@/views/about.vue";
 
 
 const routes = [
@@ -14,6 +15,15 @@ const routes = [
         meta: {
             title: '',
            isAuth: false
+        },
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: about,
+        meta: {
+            title: '',
+            isAuth: false
         },
     },
     {

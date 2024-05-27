@@ -1,5 +1,7 @@
 .app{
-    //background: url("./assets/img/bg/bg.svg");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     &:after{
         content: '';
         position: fixed;
@@ -7,11 +9,11 @@
         left: 0;
         bottom: 0;
         right: 0;
-        //background: url("./assets/img/bg/bg.svg");
+        background: url("./assets/img/bg/bg.svg");
         z-index: 1;
     }
     &__block{
-
+        flex: 1 1 auto;
     }
     &__content{
         max-width: var(--container);
