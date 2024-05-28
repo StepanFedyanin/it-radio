@@ -3,8 +3,10 @@ import helpers from '@/utils/helpers'
 import VueScrollmagic from 'scrollmagic'
 import 'vue-final-modal/style.css'
 import { VueFinalModal } from 'vue-final-modal'
-import { plugin, defaultConfig } from '@formkit/vue'
+import {plugin, defaultConfig, createInput} from '@formkit/vue'
 import { ru } from '@formkit/i18n'
+import maskaInput from '@/components/inputs/maska-input';
+import { vMaska } from 'maska'
 
 export default boot(async ({ app, router }) => {
     app.config.globalProperties.$router = router
@@ -12,6 +14,7 @@ export default boot(async ({ app, router }) => {
     app.scrollMagic = VueScrollmagic;
     app.component('VueFinalModal', VueFinalModal);
     app.config.globalProperties.$scrollMagic = VueScrollmagic
+    app.directive('Maska', vMaska);
 
     const confFormKit = {
         locales: { ru },
@@ -53,7 +56,7 @@ export default boot(async ({ app, router }) => {
                 // },
             }
         },
-        // inputs: {
+        inputs: {
         //     datepicker: createInput(datePickerInput, {
         //         props: ['mode'],
         //     }),
@@ -63,13 +66,13 @@ export default boot(async ({ app, router }) => {
         //     multiselect: createInput(multiselectInput, {
         //         props: ['options', 'placeholder', 'mode', 'searchable'],
         //     }),
-        //     maska: createInput(maskaInput, {
-        //         props: ['maska', 'placeholder', 'disabled', 'readonly'],
-        //     }),
+            maska: createInput(maskaInput, {
+                props: ['maska', 'placeholder', 'disabled', 'readonly'],
+            }),
         //     phoneWithCode: createInput(phoneWithCodeInput, {
         //         props: ['options', 'placeholder', 'mode', 'searchable', 'maska', 'disabled', 'readonly'],
         //     }),
-        // },
+        },
     };
     app.use(plugin, defaultConfig(confFormKit));
 

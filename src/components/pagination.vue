@@ -1,6 +1,6 @@
 <template>
     <div
-        v-if="total && false"
+        v-if="total"
         class="pagination"
     >
         <router-link class="pagination__btn m--prev"
@@ -82,7 +82,6 @@ export default {
         },
         pagesArray() {
             const count = Math.ceil(this.total / this.limit);
-            console.log(this.currentPage);
             let items = [];
             [...Array(count).keys()].map(i => i + 1).forEach(item => {
                 if (count <= 4) {
@@ -91,12 +90,12 @@ export default {
                     if (item === 1 && this.currentPage !== item && this.currentPage - 1 !== 1 && this.currentPage - 2 !== 1) {
                         items.push({text: '1', value: 1});
                         items.push({text: '...', value: null});
-                    } else if (item === count && this.currentPage + 1 !== count) {
+                    } else if (item === count && this.currentPage + 1 !== count  && this.currentPage + 2 !== count) {
                         items.push({text: '...', value: null});
                         items.push({text: count, value: count});
                     } else {
-                        let deltaPrev = (count - this.currentPage <= 3) ? 3 : 3;
-                        let deltaAfter = (this.currentPage < 3) ? 4 - this.currentPage : 3;
+                        let deltaPrev = (count - this.currentPage <= 3) ? 3 : 2;
+                        let deltaAfter = (this.currentPage <= 3) ? 4 - this.currentPage : 2;
                         if (item > this.currentPage - deltaPrev && item < this.currentPage + deltaAfter) {
                             console.log(item)
                             items.push({text: item, value: item});

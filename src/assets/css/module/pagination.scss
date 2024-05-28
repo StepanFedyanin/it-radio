@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   margin-top: 40px;
-
+  margin-bottom: var(--space-between-sections);
   &__list {
     display: flex;
   }

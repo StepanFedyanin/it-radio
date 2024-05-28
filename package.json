@@ -23,6 +23,7 @@
     "core-js": "^3.6.5",
     "esm": "^3.2.25",
     "gsap": "^3.12.5",
+    "maska": "^2.1.11",
     "quasar": "^2.6.0",
     "scrollmagic": "^2.0.8",
     "scrolltrigger": "^1.0.1",

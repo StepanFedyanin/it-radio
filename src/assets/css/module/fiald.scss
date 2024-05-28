@@ -26,6 +26,15 @@
   .input {
     @mixin input;
   }
+  textarea{
+    border-radius: 30px !important;
+    resize: none;
+    min-height: 80px;
+    scrollbar-color: var(--color-black) var(--color-white-opacity);
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scroll-margin-right: 20px;
+  }
   &__comment{
     font-size: 1rem;
     margin-bottom: 1rem;
