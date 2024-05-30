@@ -1,0 +1,41 @@
+.support{
+    &-block{
+        margin-bottom: var(--space-between-sections);
+        &__item {
+            width: calc(100% / 3);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 16px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+            &:before {
+                content: '';
+                height: 50px;
+                margin-bottom: 10px;
+                position: relative;
+                z-index: 2;
+            }
+
+            &.m--one-circle:before {
+                width: 50px;
+                background: url("./assets/img/icon/one-circle.svg") no-repeat center;
+            }
+
+            &.m--two-circle:before {
+                width: 100px;
+                background: url("./assets/img/icon/two-circle.svg") no-repeat center;
+            }
+
+            &.m--three-circle:before {
+                width: 150px;
+                background: url("./assets/img/icon/three-circle.svg") no-repeat center;
+            }
+        }
+        &__list{
+            display: flex;
+            gap: 40px;
+        }
+    }
+}
