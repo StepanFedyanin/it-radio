@@ -91,6 +91,13 @@ module.exports = configure(function (ctx) {
         // chain.plugin('robotstxt-webpack-plugin')
         //     .use(new RobotstxtPlugin(settings.robotsTxt))
 
+        chain.module.rule('videos')
+            .test(/\.(mp4|webm|ogg|ogv)$/)
+            .use('file-loader')
+            .loader('file-loader')
+            .options({
+              name: 'videos/[name].[hash:8].[ext]'
+            })
         chain.module.rule('images')
           .test(/\.(png|jpe?g|gif|svg|webp|avif|ico)(\?.*)?$/)
           .type('javascript/auto')

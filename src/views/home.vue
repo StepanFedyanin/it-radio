@@ -3,16 +3,17 @@
         <div class="home__meaning" ref="targetWrapper">
             <div class="app__content">
                 <p class="text home__subtitle">
-                    Мы — <span>диджитал радио</span><br/>
-                    Помогаем чему-то решить задачи в интернете.<br/>
-                    Находимся в Челябинске. <span>Работаем по всей России и Миру.</span><br/>
+                    Мы цифровое <span>онлайн радио.</span><br/>
+                    Помогаем разобраться в том, что такое <span>IT.</span><br/>
+                    Находимся в <span>Челябинске</span>, но вещаем на весь <span>Мир</span>
                 </p>
                 <h1 class="home__title" ref="targetTitle">
-                    IT Радио —
-                    <span id="targetTitleSpan">радиостанция</span>
-                    <br/>
-                    <span id="targetTitleSpan">про  сферу</span> технологий<br/>
-                    и развитие <span id="targetTitleSpan">в IT</span><br/>
+                    IT-Радио - про <span id="targetTitleSpan">технологии</span>,<br/> про <span id="targetTitleSpan">айтишников</span> и про то, чем они <span id="targetTitleSpan">живут</span><br/> под соусом из музыки, которую они <span id="targetTitleSpan">слушают</span>
+<!--                    IT Радио —-->
+<!--                    <span id="targetTitleSpan">радиостанция</span>-->
+<!--                    <br/>-->
+<!--                    <span id="targetTitleSpan">про  сферу</span> технологий<br/>-->
+<!--                    и развитие <span id="targetTitleSpan">в IT</span><br/>-->
                 </h1>
             </div>
             <div class="home__banner" ref="target">

@@ -1,6 +1,6 @@
 <template>
     <div
-        v-if="total"
+        v-if="total && false"
         class="pagination"
     >
         <router-link class="pagination__btn m--prev"

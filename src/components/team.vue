@@ -25,53 +25,80 @@
                     <img src="@/assets/img/icon/remove-user.png" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Иван Некрасов
+                    <span>Директор по развитию ООО "Флексайтс"</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img src="@/assets/img/icon/remove-user-2.jpg" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Снежана Барышникова
+                    <span>-</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img src="@/assets/img/icon/remove-user-3.jpg" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Даниил Мартьянов
+                    <span>-</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img src="@/assets/img/icon/remove-user-4.jpg" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Михаил Майоров
+                    <span>Программист (Backend, Python)</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img src="@/assets/img/icon/remove-user-5.jpg" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Ксения Деркунова
+                    <span>Журналист</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img src="@/assets/img/icon/remove-user-6.jpg" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Имя Фамилия
-                    <span>Основатель</span>
+                    Анастасия Артамонова
+                    <span>Дизайнер</span>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div class="team__cover">
+                    <img src="@/assets/img/icon/remove-user-7.jpg" alt="user"/>
+                </div>
+                <div class="team__name">
+                    -
+                    <span>-</span>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div class="team__cover">
+                    <img src="@/assets/img/icon/remove-user-8.jpg" alt="user"/>
+                </div>
+                <div class="team__name">
+                    Никита Гынгазов
+                    <span>-</span>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div class="team__cover">
+                    <img src="@/assets/img/icon/remove-user-9.jpg" alt="user"/>
+                </div>
+                <div class="team__name">
+                    Анна Чистякова
+                    <span>-</span>
                 </div>
             </SwiperSlide>
         </Swiper>

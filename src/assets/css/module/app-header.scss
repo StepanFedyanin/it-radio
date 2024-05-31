@@ -6,26 +6,29 @@
     width: 100%;
     //background: var(--color-white-opacity);
     backdrop-filter: blur(100px);
+    /*
+&:after{
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    backdrop-filter: blur(100px);
+    height: 60px;
+    display: block;
+}
 
-    /*&:after{
-        content: '';
-        position: sticky;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        backdrop-filter: blur(100px);
-    }
-    &:before{
-        content: '';
-        position: sticky;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: url("./assets/img/bg/bg.svg");
-        z-index: 1;
-    }*/
+&:before{
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("./assets/img/bg/bg.svg");
+    z-index: 1;
+}*/
     &__wrapper{
         padding: 40px 0 10px;
         width: 100%;

@@ -11,23 +11,28 @@
         </div>
         <div class="rubric-block__list">
             <div class="rubric-block__item">
-                <div class="title rubric-block__title">IT-эксперт на связи</div>
-                <div class="p rubric-block__description m--50">Ведущие приглашают IT-специалиста, который отвечает на вопросы слушателей и обсуждает актуальные темы и проблемы</div>
-                <button class="button m--arrow rubric-block__btn" @click="showModalRubric">Узнать больше</button>
+                <div class="title rubric-block__title">Новости</div>
+                <div class="p rubric-block__description m--50">Новости из мира цифровых и около цифровых технологий, рассказанные понятным языком.</div>
+                <button class="button m--arrow rubric-block__btn" @click="showModalRubric('news')">Узнать больше</button>
             </div>
             <div class="rubric-block__item">
-                <div class="title rubric-block__title">IT и музыка</div>
-                <div class="p rubric-block__description m--50">Обсуждение влияния информационных технологий на музыку, история создания IT-групп и их влияние на индустрию.</div>
-                <button class="button m--arrow rubric-block__btn" @click="showModalRubric">Узнать больше</button>
+                <div class="title rubric-block__title">Подкасты</div>
+                <div class="p rubric-block__description m--50">Диалоги, записанные нашей командой с интересными гостями из мира IT.</div>
+                <button class="button m--arrow rubric-block__btn" @click="showModalRubric('podcast')">Узнать больше</button>
             </div>
             <div class="rubric-block__item">
-                <div class="title rubric-block__title">Виртуальный мир</div>
-                <div class="p rubric-block__description m--50">Программа о последних новинках в игровой индустрии и развитии виртуальной реальности..</div>
-                <button class="button m--arrow rubric-block__btn" @click="showModalRubric">Узнать больше</button>
+                <div class="title rubric-block__title">Поговори с ИИ</div>
+                <div class="p rubric-block__description m--50">Общаемся с искусственным интеллектом и нейросетями. Пытаемся понять на что он способен и что может.</div>
+                <button class="button m--arrow rubric-block__btn" @click="showModalRubric('AI')">Узнать больше</button>
+            </div>
+            <div class="rubric-block__item">
+                <div class="title rubric-block__title">Ликбез</div>
+                <div class="p rubric-block__description m--50">Ликвидация безграмотности в сфере IT. Объяснить понятия так, чтобы понял и ребёнок и подросток и старшее поколение. Рубрика, направленная на повышение уровня осведомленности в IT.</div>
+                <button class="button m--arrow rubric-block__btn" @click="showModalRubric('educational')">Узнать больше</button>
             </div>
         </div>
     </div>
-    <RubricModal :showModal="isShowModalRubric" @hideModal="hiddenModalRubric"/>
+    <RubricModal :showModal="isShowModalRubric" @hideModal="hiddenModalRubric" :ModalTemplate="ModalTemplate"/>
 </template>
 
 <script>
@@ -38,11 +43,13 @@ export default {
     components: {RubricModal},
     data(){
         return{
-            isShowModalRubric: false
+            isShowModalRubric: false,
+            ModalTemplate:null
         }
     },
     methods:{
-        showModalRubric(){
+        showModalRubric(key){
+            this.ModalTemplate = key
             this.isShowModalRubric = true;
         },
         hiddenModalRubric(){
