@@ -54,7 +54,7 @@
 <script>
 import AppBreadcrumbs from "@/components/app-breadcrumbs.vue";
 import Pagination from "@/components/pagination.vue";
-
+// import { audio } from "@/services";
 export default {
     name: 'playlists',
     components: {Pagination, AppBreadcrumbs},
@@ -76,6 +76,7 @@ export default {
                     name: 'tomorrow'
                 },
             ],
+            station: this.$store.state.station
         }
     },
     watch:{
@@ -85,7 +86,21 @@ export default {
             },
         }
     },
+    created() {
+        // this.getPlayList();
+    },
     methods:{
+        // getPlayList(){
+        //     audio.getPlayList(this.station.id).then(res => {
+        //         let groups = res
+        //         // this.$store.dispatch('setMeta', {});
+        //         // this.$store.dispatch('fetchDataByKey', { data: groups, key: 'groups' });
+        //         // this.showLoaderSending.groups = false;
+        //     }).catch(err => {
+        //         // this.showLoaderSending.groups = false;
+        //         console.error(err)
+        //     })
+        // },
         changeTab(tab){
             this.currentTabsItem = tab;
         }

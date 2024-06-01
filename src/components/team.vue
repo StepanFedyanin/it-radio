@@ -44,7 +44,7 @@
                 </div>
                 <div class="team__name">
                     Даниил Мартьянов
-                    <span>-</span>
+                    <span>Дизайнер</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>

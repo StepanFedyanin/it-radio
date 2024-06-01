@@ -6,6 +6,7 @@
             <Page500 v-if="showErrorPage500"/>
             <routerView v-else/>
         </div>
+        <Player/>
         <AppFooter/>
     </div>
     <Authentication :showModal="showAuthentication" @hideModal="changeShowAuthentication"/>
@@ -17,11 +18,13 @@ import Page500 from '@/views/Page500.vue';
 import AppHeader from "@/components/app-header.vue";
 import AppFooter from "@/components/app-footer.vue";
 import Authentication from "@/components/authentication.vue";
+import Player from "@/components/player.vue";
 
 export default {
     async preFetch({store, currentRoute, previousRoute, redirect, ssrContext, urlPath, publicPath}) {
     },
     components: {
+        Player,
         Authentication,
         AppFooter,
         AppHeader,

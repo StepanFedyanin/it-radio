@@ -6,6 +6,8 @@ import { VueFinalModal } from 'vue-final-modal'
 import {plugin, defaultConfig, createInput} from '@formkit/vue'
 import { ru } from '@formkit/i18n'
 import maskaInput from '@/components/inputs/maska-input';
+import toggle from '@/components/inputs/toggle';
+
 import { vMaska } from 'maska'
 
 export default boot(async ({ app, router }) => {
@@ -69,9 +71,9 @@ export default boot(async ({ app, router }) => {
             maska: createInput(maskaInput, {
                 props: ['maska', 'placeholder', 'disabled', 'readonly'],
             }),
-        //     phoneWithCode: createInput(phoneWithCodeInput, {
-        //         props: ['options', 'placeholder', 'mode', 'searchable', 'maska', 'disabled', 'readonly'],
-        //     }),
+            toggle: createInput(toggle, {
+                props: ['placeholder', 'disabled', 'readonly'],
+            }),
         },
     };
     app.use(plugin, defaultConfig(confFormKit));

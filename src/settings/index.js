@@ -15,11 +15,13 @@ const serviceUrl = {
     protocol: process.env.SERVICE_PROTOCOL,
     port: process.env.SERVICE_PORT,
     api: process.env.SERVICE_API,
+    apiAudio: process.env.SERVICE_URL_AUDIO,
     localPath: '//localhost',
     onLocal: (process.env.SERVICE_ON_LOCAL === 'true')
 }
 
 let urlPath = `${serviceUrl.protocol}:${serviceUrl.url}${serviceUrl.api}`;
+let urlPathAudio = `${serviceUrl.protocol}:${serviceUrl.apiAudio}`;
 if (process.env.CLIENT) {
     if (serviceUrl.onLocal || window.location.hostname === 'localhost') {
         urlPath = `${serviceUrl.localPath}:${serviceUrl.port}${serviceUrl.api}`;
@@ -27,68 +29,6 @@ if (process.env.CLIENT) {
 }
 
 let selfPath = `${serviceUrl.protocol}:${serviceUrl.selfUrl}`;
-
-const cabinet = {
-    url: `${urlPath}/cabinet`,
-};
-
-const category = {
-    url: `${urlPath}`,
-};
-
-const chat = {
-    url: `${urlPath}/chat`,
-    wsUrl: `${urlPath}/ws/chat`,
-    wsUrlPush: `${urlPath}/ws/push`,
-};
-
-const common = {
-    url: `${urlPath}/common`
-};
-
-const event = {
-    url: `${urlPath}/event`,
-};
-
-const tender = {
-    url: `${urlPath}/tender`,
-};
-
-const user = {
-    url: `${urlPath}/user`,
-};
-
-const websocket = {
-    url: '/ws/',
-    protocol: serviceUrl.protocol
-};
-
-const tenderChat = {
-    url: `${urlPath}/tender`,
-    wsUrl: `${urlPath}/ws/chat`,
-    wsUrlPush: `${urlPath}/ws/push`,
-};
-
-const push = {
-    url: `${urlPath}/ws/push`,
-};
-
-const geo = {
-    url: `${urlPath}/geo`,
-};
-
-const product = {
-    url: `${urlPath}`,
-};
-
-const verification = {
-    url: `${urlPath}/verification`
-};
-
-const logger = {
-    url: `${urlPath}/logger`,
-    level: 'debug',
-};
 
 const robotsTxt = {
     filePath: '/robots.txt',
@@ -104,22 +44,9 @@ const robotsTxt = {
 
 export {
     ajax,
-    cabinet,
     cache,
-    category,
-    chat,
-    common,
-    event,
-    geo,
-    product,
-    push,
-    tender,
-    tenderChat,
-    user,
-    verification,
-    logger,
     urlPath,
+    urlPathAudio,
     selfPath,
     robotsTxt,
-    websocket,
 };

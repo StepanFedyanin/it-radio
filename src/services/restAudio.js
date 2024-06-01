@@ -1,7 +1,7 @@
 import ajax from '@/utils/ajax';
 import router from '@/router';
 import store from '@/store';
-import cache from '@/utils/cache';
+import {urlPathAudio} from '@/settings'
 
 class RESTError extends Error {
     constructor(error, message, params={}) {
@@ -32,9 +32,6 @@ class RESTError extends Error {
 }
 
 class REST {
-    static get settings() {
-        throw new Error('settings must be overridden');
-    }
     static _get(url, params={}, extraParams, use_cache=false) {
         return this._request('get', url, params, {}, {}, extraParams, use_cache);
     }
@@ -51,19 +48,15 @@ class REST {
         return this._request('delete', url, params, data);
     }
     static _request(method, url, params={}, data={}, extraData={}, extraParams={}, use_cache=false) {
-        let cache_key = null;
         return ajax.request({
             method,
-            url: `${this.settings.urlPath}${url ? '/' : ''}${url}/`,
+            url: `${urlPathAudio}${url ? '/' : ''}${url}/`,
             params,
             data,
             extraData,
             extraParams,
             headers: this._getAuthHeaders()
         }).then((response) => {
-            if (cache_key) {
-                cache.set(cache_key, response.data);
-            }
             return response.data;
         });
     }

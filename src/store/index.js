@@ -14,14 +14,9 @@ export default createStore({
             token: null,
             refreshToken: null,
             user: null,
-            regData: null,
-            data: {},
-            meta: {},
-            metaScheme: {},
-            loader: null,
-            error: null,
-            organization: {},
-            info:{}
+            station: {
+                id: 1
+            }
         }
     },
     plugins: [vuexPersist.plugin],
@@ -37,37 +32,6 @@ export default createStore({
             state.token = null;
             state.refreshToken = null;
         },
-        stepRegistration(state, step) {
-            state.stepRegistration = step;
-        },
-        regData(state, data) {
-            state.regData = data;
-        },
-        data(state, data, key) {
-            state.data = data;
-        },
-        dataByKey(state, data) {
-            state.data[data.key] = data.data;
-        },
-        metaScheme(state, meta) {
-            state.metaScheme = meta;
-        },
-        meta(state, meta) {
-            state.meta = meta;
-        },
-        counters(state, data) {
-            state.counters = data;
-        },
-        updateError(state, error) {
-            if (error !== '404') state.error = error;
-            state.showErrorPage = error;
-        },
-        updatedOrganization(state, data) {
-            state.organization = data;
-        },
-        setInfo(state, data){
-            state.info = data;
-        }
     },
     actions: {
         setToken(context, tokens) {
@@ -81,46 +45,5 @@ export default createStore({
             context.commit('regData', null);
             context.commit('removeToken');
         },
-        setStepRegistration(context, step) {
-            context.commit('stepRegistration', step);
-        },
-        setRegData(context, data) {
-            context.commit('regData', data);
-        },
-        setMetaScheme(context, meta) {
-            context.commit('metaScheme', meta);
-        },
-        setMeta(context, meta) {
-            context.commit('meta', meta);
-        },
-        setCounters(context, data) {
-            context.commit('counters', data);
-        },
-        fetchData(context, data) {
-            context.commit('data', data);
-        },
-        fetchDataByKey(context, data) {
-            context.commit('dataByKey', data);
-        },
-        showError(context, error) {
-            if (error.response?.status !== 401) {
-                context.commit('updateError', error);
-            }
-        },
-        hideError(context) {
-            context.commit('updateError', null);
-        },
-        showLoader(context, loader) {
-            context.commit('loader', loader);
-        },
-        hideLoader(context) {
-            context.commit('loader', null);
-        },
-        updatedOrganization(context, data){
-            context.commit('updatedOrganization',data)
-        },
-        setInfoParams(context, data){
-            context.commit('setInfo',data)
-        }
     }
 });

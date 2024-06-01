@@ -40,7 +40,6 @@ export default route(function (/* { store, ssrContext } */) {
 	})
 
 	Router.beforeEach((to, from, next) => {
-		store.dispatch('hideError');
 		if (to.matched.some(record => record.meta.requiresAuth) && !process.env.SERVER) {
 			if (store.state.user && store.state.user.id) {
 				next();

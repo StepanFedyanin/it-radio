@@ -1,3 +1,5 @@
+import audio from './audio';
 
-
-export {};
+export {
+    audio
+};
