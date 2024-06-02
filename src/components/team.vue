@@ -89,7 +89,7 @@
                 </div>
                 <div class="team__name">
                     Никита Гынгазов
-                    <span>-</span>
+                    <span>Журналист</span>
                 </div>
             </SwiperSlide>
             <SwiperSlide>

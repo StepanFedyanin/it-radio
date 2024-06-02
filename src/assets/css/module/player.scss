@@ -8,7 +8,7 @@
   padding: 10px 40px;
   display: flex;
   gap: 40px;
-  display: none;
+  //display: none;
   &__cover {
     width: 80px;
     height: 80px;
@@ -86,20 +86,19 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-left: 34px;
-    height: 24px;
-    &:before{
-      position: absolute;
-      left: 0;
-      content: '';
+    gap: 10px;
+    span{
       width: 24px;
       height: 24px;
       background: svg-load('./assets/img/icon/volume.svg', fill=#FFFF) no-repeat 100%;
+      &:hover {
+        cursor: url("./assets/img/icon/cursor.svg"), auto;
+      }
     }
     input {
       position: relative;
       appearance: none;
-      width: 100%;
+      width: calc(100% - 34px);
       height: 5px;
       border-radius: 10px;
       display: block;
@@ -162,7 +161,20 @@
     position: relative;
 
     &.m--play {
+      &:after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        margin: auto;
+        background: svg-load('./assets/img/icon/play.svg', fill=#FFFF) no-repeat 100%;
+        background-size: contain;
+      }
 
+      &:hover:after {
+        background: svg-load('./assets/img/icon/play.svg', fill=#871DF0FF) no-repeat 100%;
+        background-size: contain;
+      }
     }
 
     &.m--pause {

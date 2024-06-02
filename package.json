@@ -10,7 +10,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "serve": "npx cross-env NODE_ENV=development quasar dev",
     "serve:ssr": "quasar dev -m ssr",
-    "build": "quasar build",
+    "build": "npx cross-env NODE_ENV=development quasar build",
     "build:ssr": "quasar build -m ssr",
     "build:dev": "quasar build",
     "build:ssr:dev": "npx cross-env NODE_ENV=development quasar build -m ssr"
