@@ -17,7 +17,7 @@
 					>
 						{{ item.title }}
 					</router-link>
-					<button v-else class="button" :class="[item.icon, showAuthentication&&'m--active']" @click="handlerClick(item.action)">{{ item.title }}</button>
+					<button v-else-if="item.title" class="button" :class="[item.icon, showAuthentication&&'m--active']" @click="handlerClick(item.action)">{{ item.title }}</button>
 				</li>
 			</ul>
 		</div>
@@ -37,7 +37,7 @@ export default {
     },
 	data(){
 		return{
-			menu:[
+			menuList:[
 				{
 					name: 'about',
 					role: 'all',
@@ -70,12 +70,36 @@ export default {
 				},
 				{
 					name: 'home',
-					role: 'all',
+					role: 'login',
 					action: 'login',
 					icon: 'm--arrow',
 					title: 'Войти'
 				},
+				{
+					name: 'home',
+					role: 'auth',
+					action: 'profile',
+				},
 			]
+		}
+	},
+	computed:{
+		user() {
+			console.log(this.$store.state.user)
+			return this.$store.state.user;
+		},
+		menu(){
+			return this.menuList.filter(item=>{
+				// if (item.role==='all') return true
+				// if (item.role==='auth' && this.user.id) {
+				// 	return true
+				// }else if(!this.user.id){
+				// 	return true
+				// }else {
+				// 	return false
+				// }
+				return item;
+			})
 		}
 	},
     methods:{

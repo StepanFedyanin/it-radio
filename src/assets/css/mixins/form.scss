@@ -121,7 +121,16 @@
       }
     }
   }
-
+  &.m--text-link{
+    border: none;
+    pad: 0;
+    min-width: 0;
+    min-height: 0;
+    &:hover{
+      background: transparent;
+    }
+    @mixin a;
+  }
   &.m--circle {
     width: 56px;
     height: 56px;

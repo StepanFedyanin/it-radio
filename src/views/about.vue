@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<video class="about__video" playsinline="" autoplay="" loop="" muted="">
-				<source src="@/assets/img/mp4/about.mp4" type="video/mp4">
+				<source src="@/assets/videos/about.mp4" type="video/mp4">
 			</video>
 			<div class="about__description">
 				<div class="about__description-info">

@@ -90,14 +90,7 @@ module.exports = configure(function (ctx) {
         // const settings = require(`./src/settings`);
         // chain.plugin('robotstxt-webpack-plugin')
         //     .use(new RobotstxtPlugin(settings.robotsTxt))
-
-        chain.module.rule('videos')
-            .test(/\.(mp4|webm|ogg|ogv)$/)
-            .use('file-loader')
-            .loader('file-loader')
-            .options({
-              name: 'videos/[name].[hash:8].[ext]'
-            })
+        
         chain.module.rule('images')
           .test(/\.(png|jpe?g|gif|svg|webp|avif|ico)(\?.*)?$/)
           .type('javascript/auto')
@@ -106,8 +99,18 @@ module.exports = configure(function (ctx) {
           .options({
             esModule: false,
             limit: 16384,
-            name: `img/[name].[hash:8].[ext]`
+            name: `assets/img/[name].[hash:8].[ext]`
           })
+        chain.module.rule('videos')
+            .test(/\.(mp4|webm|mov)(\?.*)?$/)
+            .type('javascript/auto')
+            .use('url-loader')
+            .loader('url-loader')
+            .options({
+              esModule: false,
+              limit: 32768,
+              name: `assets/media/[name].[hash:8].[ext]`
+            })
       },
       extendWebpack (cfg) {
         cfg.resolve.alias = {

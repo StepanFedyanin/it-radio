@@ -1,0 +1,156 @@
+.song {
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 40px;
+    }
+    &-item{
+        width: calc(50% - 40px / 2);
+        position: relative;
+        display: flex;
+        align-items: center;
+        z-index: 2;
+        border-left: 3px solid transparent;
+        padding: 10px;
+        transition: all .5s ease;
+        background: transparent;
+        &.m--select &__selected{
+            margin-right: 20px;
+            width: 35px;
+            height: 33px;
+            &.m--stop{
+                path{
+                    animation-play-state: paused;
+                }
+            }
+        }
+        &__selected{
+            width: 0;
+            overflow: hidden;
+            transition: all .2s ease;
+            path:nth-child(n){
+                animation: play-transform 3s infinite linear;
+            }
+            path:nth-child(2n){
+                animation: play-transform 2s infinite linear;
+            }
+            path:nth-child(3n){
+                animation: play-transform 1.5s infinite linear;
+            }
+
+        }
+        &:hover{
+            cursor: url("./assets/img/icon/cursor.svg"), auto;
+            border-color: var(--color-violet);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        &__btn{
+            min-height: 0;
+            min-width: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background: var(--color-violet);
+            position: relative;
+            &.m--small{
+                background: transparent;
+                width: 25px;
+                height: 25px;
+            }
+            &.m--favorites{
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    margin: auto;
+                    background: svg-load('./assets/img/icon/favorites.svg', fill=#871DF0FF) no-repeat 100%;
+                    background-size: contain;
+                }
+
+                &:hover:after {
+                    background: svg-load('./assets/img/icon/favorites.svg', fill=#FFF) no-repeat 100%;
+                    background-size: contain;
+                }
+            }
+            &.m--add{
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 25px;
+                    height: 25px;
+                    margin: auto;
+                    background: svg-load('./assets/img/icon/add-icon.svg', fill=#871DF0FF) no-repeat 100%;
+                    background-size: contain;
+                }
+
+                &:hover:after {
+                    background: svg-load('./assets/img/icon/add-icon.svg', fill=#FFF) no-repeat 100%;
+                    background-size: contain;
+                }
+            }
+            &.m--play {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    margin: auto;
+                    background: svg-load('./assets/img/icon/play.svg', fill=#FFFF) no-repeat 100%;
+                    background-size: contain;
+                }
+
+                &:hover:after {
+                    background: svg-load('./assets/img/icon/play.svg', fill=#871DF0FF) no-repeat 100%;
+                    background-size: contain;
+                }
+            }
+
+            &.m--pause {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    margin: auto;
+                    background: svg-load('./assets/img/icon/pause.svg', fill=#FFFF) no-repeat 100%;
+                    background-size: contain;
+                }
+
+                &:hover:after {
+                    background: svg-load('./assets/img/icon/pause.svg', fill=#871DF0FF) no-repeat 100%;
+                    background-size: contain;
+                }
+            }
+        }
+        &__info{
+            display: flex;
+            flex-direction: column;
+            font-size: 1rem;
+            color: var(--color-white-opacity);
+            line-height: 21px;
+            margin-left: 20px;
+            span{
+                color: var(--color-white);
+            }
+        }
+        &__tools{
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+}
+@keyframes play-transform {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

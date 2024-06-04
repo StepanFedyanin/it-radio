@@ -5,6 +5,7 @@ import support from "@/views/support.vue";
 import contacts from "@/views/contacts.vue";
 import podcasts from "@/views/podcasts.vue";
 import about from "@/views/about.vue";
+import profile from "@/views/profile.vue";
 
 
 const routes = [
@@ -13,7 +14,7 @@ const routes = [
         name: 'home',
         component: home,
         meta: {
-            title: '',
+            title: 'Главная',
            isAuth: false
         },
     },
@@ -22,7 +23,7 @@ const routes = [
         name: 'about',
         component: about,
         meta: {
-            title: '',
+            title: 'О нас',
             isAuth: false
         },
     },
@@ -31,7 +32,7 @@ const routes = [
         name: 'rubric',
         component: rubric,
         meta: {
-            title: '',
+            title: 'Рубрики',
             isAuth: false
         },
     },
@@ -40,7 +41,7 @@ const routes = [
         name: 'playlists',
         component: playlists,
         meta: {
-            title: '',
+            title: 'Плейлисты',
             isAuth: false
         },
     },
@@ -49,7 +50,7 @@ const routes = [
         name: 'podcasts',
         component: podcasts,
         meta: {
-            title: '',
+            title: 'Подкасты',
             isAuth: false
         },
     },
@@ -58,7 +59,7 @@ const routes = [
         name: 'support',
         component: support,
         meta: {
-            title: '',
+            title: 'Поддержка',
             isAuth: false
         },
     },
@@ -67,10 +68,20 @@ const routes = [
         name: 'contacts',
         component: contacts,
         meta: {
-            title: '',
+            title: 'Контакты',
             isAuth: false
         },
     },
+    {
+        path: '/profile',
+        name: 'profile',
+        component: profile,
+        meta: {
+            title: 'Личный кабинет',
+            isAuth: false
+        },
+    },
+    
     // {
     //     path: '/error500',
     //     name: 'page500',
