@@ -1,5 +1,5 @@
-import {tender as settings} from '@/settings';
-import {REST, RESTError} from './restAudio';
+import {urlPathAudio as settings} from '@/settings';
+import {REST, RESTError} from './rest';
 
 export default class extends REST {
     static get settings() {

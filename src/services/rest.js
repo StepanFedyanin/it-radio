@@ -54,7 +54,7 @@ class REST {
         let cache_key = null;
         return ajax.request({
             method,
-            url: `${this.settings.urlPath}${url ? '/' : ''}${url}/`,
+            url: `${this.settings}${url ? '/' : ''}${url}/`,
             params,
             data,
             extraData,

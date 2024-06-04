@@ -9,7 +9,13 @@
                 новости из мира технологий, отвечать на их вопросы и обсуждать горячие темы на IT радио.
             </div>
         </div>
+		<template v-if="showLoader">
+			<div class="loader">
+				<div class="spinner" /> Загрузка данных
+			</div>
+		</template>
         <Swiper
+			v-else
             :slides-per-view="4"
             :space-between="20"
             :modules="modules"
@@ -20,85 +26,13 @@
             }"
             class="team__slider"
         >
-            <SwiperSlide class="team__item">
+            <SwiperSlide class="team__item" v-for="employee in team" :key="employee.id">
                 <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user.png" alt="user"/>
+                    <img :src="`${selfUrl + employee.img_person}`" alt="user"/>
                 </div>
                 <div class="team__name">
-                    Иван Некрасов
-                    <span>Директор по развитию ООО "Флексайтс"</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-2.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Снежана Барышникова
-                    <span>-</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-3.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Даниил Мартьянов
-                    <span>Дизайнер</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-4.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Михаил Майоров
-                    <span>Программист (Backend, Python)</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-5.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Ксения Деркунова
-                    <span>Журналист</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-6.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Анастасия Артамонова
-                    <span>Дизайнер</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-7.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    -
-                    <span>-</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-8.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Никита Гынгазов
-                    <span>Журналист</span>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide>
-                <div class="team__cover">
-                    <img src="@/assets/img/icon/remove-user-9.jpg" alt="user"/>
-                </div>
-                <div class="team__name">
-                    Анна Чистякова
-                    <span>-</span>
+                    {{employee.name}} {{employee.last_name}}
+                    <span>{{employee.position}}</span>
                 </div>
             </SwiperSlide>
         </Swiper>
@@ -117,14 +51,34 @@
 import 'swiper/css';
 import {Swiper, SwiperSlide} from "swiper/vue";
 import {Pagination, Scrollbar} from "swiper/modules";
+import { app } from "@/services";
+import {selfUrl} from '@/settings';
 
 export default {
     name: 'team',
     components: {Swiper, SwiperSlide},
     data() {
         return {
+			selfUrl,
+			team: [],
+			showLoader: false,
             modules: [Scrollbar, Pagination],
         }
-    }
+    },
+	created() {
+		this.getTeams();
+	},
+	methods:{
+		getTeams(){
+			this.showLoader = true;
+			app.getTeams().then((data)=>{
+				this.showLoader = false;
+				this.team = data;
+			}).catch(err=>{
+				this.showLoader = false;
+				console.log(err)
+			})
+		}
+	}
 }
 </script>

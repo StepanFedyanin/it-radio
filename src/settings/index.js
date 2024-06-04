@@ -27,7 +27,7 @@ if (process.env.CLIENT) {
         urlPath = `${serviceUrl.localPath}:${serviceUrl.port}${serviceUrl.api}`;
     }
 }
-
+let selfUrl = `${serviceUrl.protocol}:${serviceUrl.url}`
 let selfPath = `${serviceUrl.protocol}:${serviceUrl.selfUrl}`;
 
 const robotsTxt = {
@@ -43,6 +43,7 @@ const robotsTxt = {
 };
 
 export {
+    selfUrl,
     ajax,
     cache,
     urlPath,
