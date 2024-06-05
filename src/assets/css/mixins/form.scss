@@ -31,10 +31,19 @@
   background: transparent;
   position: relative;
   z-index: 2;
+
+
   &:hover {
     cursor: url("./assets/img/icon/cursor.svg"), auto;
     color: var(--color-black);
     background: var(--color-white);
+  }
+  &-violet{
+    border-color: var(--color-violet);
+    color: var(--color-violet);
+    &:hover {
+     border-color: transparent;
+    }
   }
   &.is-active,
   &:active {

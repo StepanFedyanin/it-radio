@@ -18,6 +18,7 @@
 						{{ item.title }}
 					</router-link>
 					<button v-else-if="item.title" class="button" :class="[item.icon, showAuthentication&&'m--active']" @click="handlerClick(item.action)">{{ item.title }}</button>
+					<button v-else class="button button-violet" @click="handlerClick(item.action)">{{ user.first_name || user.email }}</button>
 				</li>
 			</ul>
 		</div>
@@ -90,15 +91,10 @@ export default {
 		},
 		menu(){
 			return this.menuList.filter(item=>{
-				// if (item.role==='all') return true
-				// if (item.role==='auth' && this.user.id) {
-				// 	return true
-				// }else if(!this.user.id){
-				// 	return true
-				// }else {
-				// 	return false
-				// }
-				return item;
+				if (item.role==='all') return true
+				if (item.role==='auth' && this.user?.id) return !!this.user?.id
+				if (item.role==='login' && !this.user?.id) return !this.user?.id
+				return  false
 			})
 		}
 	},
@@ -107,6 +103,9 @@ export default {
             if (methods==='login'){
                 this.$emit('shopAuthentication', true)
             }
+			if (methods==='profile'){
+				this.next('profile')
+			}
         },
         next(name){
             this.$router.push({name})

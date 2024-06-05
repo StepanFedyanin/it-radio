@@ -42,7 +42,6 @@ export default createStore({
         },
         deathUser(context) {
             context.commit('user', {});
-            context.commit('regData', null);
             context.commit('removeToken');
         },
     }

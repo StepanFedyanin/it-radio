@@ -41,6 +41,8 @@
 </template>
 
 <script>
+import {audio as Player} from "@/services";
+
 export default {
     name: 'player',
     data() {
@@ -51,12 +53,26 @@ export default {
             isPlayRadio: true,
             volume: 100,
             progress: 100,
-        }
+			connection: null,
+		}
     },
-    mounted() {
+	created() {
+		this.connectionPlayer();
+	},
+	mounted() {
         // this.$refs.player.addEventListener('timeupdate', this.updateProgress);
     },
     methods: {
+		connectionPlayer() {
+			if (this.connection) {
+				this.connection.removePlay();
+			}
+			this.connection = new Player();
+			this.connection.play();
+			this.connection.songs();
+			
+			console.log(this.connection)
+		},
         updateProgress(){
             console.log(this.$refs.player.currentTime)
             console.log(this.$refs.player.duration)
