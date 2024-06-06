@@ -1,11 +1,11 @@
-:root{
-    --color-black:#232323;
-    --color-white:#FFFFFF;
-    --color-white-darker:#E7E7E7;
-    --color-white-opacity:#404145;
+:root {
+    --color-black: #232323;
+    --color-white: #FFFFFF;
+    --color-white-darker: #E7E7E7;
+    --color-white-opacity: #404145;
     --bg-wrapper-modal: #000000E5;
     --color-violet: #871DF0;
-    --color-emmit:#E81717;
+    --color-emmit: #E81717;
     --bg-opacity: rgba(255, 255, 255, 0.15);
     --base-fz: 18px;
     --base-lh: 1.3;
@@ -13,12 +13,17 @@
     --linear-gradient-highlight: linear-gradient(259.3deg, #5E5BFC 0.44%, #871DF0 97.88%);
     --linear-gradient: linear-gradient(91.17deg, #C6F1F7 -4.01%, #F983E9 36.14%, #B877FF 77.44%, #C2E9CD 106.11%);
     --container: 1420px;
+    --space-between-block: calc(var(--base-fz) * 2.25);
     --space-between-sections: calc(var(--base-fz) * 7);
+    --base-content-size: calc(100vh - 140px);
 
-
-
-    @media (max-width: 1420px) {
-        --container: 1220px;
-    }
+    --document-width-xxl: 1920px;
+    --document-width-xl: 1620px;
+    --document-width-l: 1366px;
+    --document-width-m: 1024px;
+    --document-width-s: 780px;
+    --document-width-xs: 640px;
+    --document-width-xxs: 480px;
 }
+
 

@@ -35,7 +35,7 @@
         }
         &__list{
             display: flex;
-            gap: 40px;
+            gap: var(--space-between-block);
         }
     }
 }

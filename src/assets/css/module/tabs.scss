@@ -1,6 +1,6 @@
 .tabs {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: var(--space-between-block);
   &.m--btns{
     gap: 10px;
   }

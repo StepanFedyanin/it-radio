@@ -2,7 +2,7 @@
     &-list{
         display: flex;
         flex-wrap: wrap;
-        gap: 0 40px;
+        gap: 0 var(--space-between-block);
     }
     &-item{
         width: calc(50% - 40px / 2);

@@ -1,5 +1,5 @@
 .footer{
-  padding: 0 0 40px;
+  padding: 0 0 var(--space-between-block);
   width: 100%;
   &__top{
     padding-bottom: 80px;
@@ -20,7 +20,7 @@
     grid-template-columns: var(--space-between-sections) var(--space-between-sections);
     grid-template-rows: min-content min-content;
     grid-column-gap: var(--space-between-sections);
-    grid-row-gap: 40px;
+    grid-row-gap: var(--space-between-block);
     &-item{
 
     }
@@ -30,7 +30,7 @@
   }
   &__social{
     display: flex;
-    gap: 40px;
+    gap: var(--space-between-block);
   }
   &__connection{
     display: flex;

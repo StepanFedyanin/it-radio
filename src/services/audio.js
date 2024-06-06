@@ -6,7 +6,8 @@ export default class extends REST {
     static get settings() {
         return settings;
     }
-    play(){
+    
+    init(){
         const sseBaseUri = `${settings}/api/live/nowplaying/sse`;
         const sseUriParams = new URLSearchParams({
             cf_connect: JSON.stringify({
@@ -15,16 +16,15 @@ export default class extends REST {
                 },
             }),
         });
-        const sseUri = sseBaseUri + "?" + sseUriParams.toString();
-        return new EventSource(sseUri);
+        this.connection = new EventSource(sseBaseUri + "?" + sseUriParams.toString());
     }
+    
     removePlay(){
-        this.play().close()
+        this.connection.close()
     }
     songs(){
-        this.play().onmessage = (e) => {
+        this.connection.onmessage = (e) => {
             const jsonData = JSON.parse(e.data);
-            console.log(jsonData)
             // if ("connect" in jsonData) {
             //     const connectData = jsonData.connect;
             //
@@ -49,6 +49,10 @@ export default class extends REST {
             // }
         };
         
+    }
+    
+    onHandler(event){
+        this.connection.onmessage = event
     }
     static getPlayList(station, params) {
         // return this._get(`station/${station}/playlists`, params, {}).then((data) => {

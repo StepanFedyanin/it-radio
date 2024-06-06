@@ -5,9 +5,9 @@
   right: 0;
   backdrop-filter: blur(100px);
   z-index: 3;
-  padding: 10px 40px;
+  padding: 10px var(--space-between-block);
   display: flex;
-  gap: 40px;
+  gap: var(--space-between-block);
   //display: none;
   &__cover {
     width: 80px;
@@ -40,7 +40,7 @@
     width: 27px;
     height: 27px;
     background: svg-load('./assets/img/icon/favorites.svg', fill=#404145FF) no-repeat 100%;
-    margin-left: 40px;
+    margin-left: var(--space-between-block);
     &:hover {
       cursor: url("./assets/img/icon/cursor.svg"), auto;
     }
@@ -78,7 +78,7 @@
   }
   &__tools{
     display: flex;
-    gap: 40px;
+    gap: var(--space-between-block);
     align-items: center;
     margin-left: auto;
   }
