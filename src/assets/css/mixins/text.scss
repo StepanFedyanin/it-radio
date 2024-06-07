@@ -35,11 +35,23 @@
 
   /*margin-top: 32px;*/
   margin-bottom: 1.5rem;
-  font-size: 24px;
+  font-size: 75px;
   line-height: 1.2;
   font-weight: 500;
   color: var(--color-white);
   padding-bottom: 6px;
+  @mixin responsive-xl {
+    font-size: 60px;
+  }
+  @mixin responsive-l {
+    font-size: 48px;
+  }
+  @mixin responsive-m {
+    font-size: 36px;
+  }
+  @mixin responsive-s {
+    font-size: 24px;
+  }
 }
 
 @define-mixin h2 {

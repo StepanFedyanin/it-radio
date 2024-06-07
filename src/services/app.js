@@ -55,4 +55,11 @@ export default class extends REST {
             throw new RESTError(error, 'Ошибка при получении плейлистов');
         });
     }
+    static createFavoriteForUser(params){
+        return this._post(`radio/song/create_song`, {}, params).then((data) => {
+            return data;
+        }).catch((error) => {
+            throw new RESTError(error, 'Ошибка при получении плейлистов');
+        });
+    }
 }

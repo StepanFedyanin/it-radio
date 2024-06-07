@@ -1,39 +1,40 @@
-@mixin responsive-xxl{
-    @media (max-width: var(--document-width-xxl)) {
+@define-mixin responsive-xl{
+    @media (max-width: $document-width-xl) {
         @mixin-content;
+
     }
 }
 
 @define-mixin responsive-l {
-    @media (max-width: var(--document-width-l)) {
+    @media (max-width: $document-width-l) {
         @mixin-content;
     }
 }
 
 
 @define-mixin responsive-m {
-    @media (max-width: var(--document-width-m)) {
+    @media (max-width: $document-width-m) {
         @mixin-content;
     }
 }
 
 
 @define-mixin responsive-s {
-    @media (max-width: var(--document-width-s)) {
+    @media (max-width: $document-width-s) {
         @mixin-content;
     }
 }
 
 
 @define-mixin responsive-xs {
-    @media (max-width: var(--document-width-xs)) {
+    @media (max-width: $document-width-xs) {
         @mixin-content;
     }
 }
 
 
     @define-mixin responsive-xxs {
-    @media (max-width: var(--document-width-xxs)) {
+    @media (max-width: $document-width-xxs) {
         @mixin-content;
     }
 }

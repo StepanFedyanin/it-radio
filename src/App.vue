@@ -6,7 +6,7 @@
             <Page500 v-if="showErrorPage500"/>
             <routerView v-else/>
         </div>
-        <Player/>
+        <Player @shopAuthentication="changeShowAuthentication"/>
         <AppFooter/>
     </div>
     <Authentication :showModal="showAuthentication" @hideModal="changeShowAuthentication"/>

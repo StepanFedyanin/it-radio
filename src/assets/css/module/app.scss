@@ -16,6 +16,16 @@
     &__block{
         flex: 1 1 auto;
     }
+    &__overlay{
+        position: fixed;
+        z-index: 5;
+        min-height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-black-cc);
+    }
     &__content{
         max-width: var(--container);
         margin: 0 auto;

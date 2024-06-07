@@ -99,7 +99,7 @@ export default {
 			registerForm: [
 				{
 					$formkit: 'text',
-					name: 'email',
+					name: 'first_name',
 					label: 'ваше имя',
 					placeholder: 'Ваше Имя',
 					validation: 'required',
@@ -107,7 +107,7 @@ export default {
 				},
 				{
 					$formkit: 'text',
-					name: 'login',
+					name: 'email',
 					label: 'придумайте логин',
 					placeholder: 'Придумайте логин',
 					validation: 'required',

@@ -19,71 +19,73 @@
             <div class="home__banner" ref="target">
             </div>
         </div>
-        <div class="app__content">
-
-            <div class="home__description">
-                <div class="home__info">
-                    <div class="text home__info--item">
-                        IT-RADIO. 2023
-                        <span>
+		<template v-if="false">
+			<div class="app__content">
+				
+				<div class="home__description">
+					<div class="home__info">
+						<div class="text home__info--item">
+							IT-RADIO. 2023
+							<span>
 						Сегодня IT-сфера развивается настолько быстро, что следить за всеми новинками и изменениями в ней становится все сложнее.
                         <br/>
                         <br/>						Но есть способ всегда быть в курсе последних новостей и событий — это IT-радио.
 					</span>
-                    </div>
-                    <h2 class="h2 m--border">
-                        Открывая новые горизонты в мире технологий
-                    </h2>
-                    <div class="text home__info--item m--circle">
+						</div>
+						<h2 class="h2 m--border">
+							Открывая новые горизонты в мире технологий
+						</h2>
+						<div class="text home__info--item m--circle">
                     <span>
 						IT-радио — это уникальный проект, который объединяет в себе самых ярких представителей IT-индустрии, а также экспертов из различных областей, чтобы поделиться своими знаниями и опытом с широкой аудиторией.
                         <br/>
                         <br/>
 						Каждое шоу на IT-радио включает в себя актуальные темы, новости, обзоры, интервью с экспертами и многое другое.
 					</span>
-                    </div>
-                </div>
-                <div class="home__content">
-                    <div class="home__content--item m--one-circle">
-                        <span class="title">Музыка</span>
-                        Нам важно создать комфортную атмосферу, которая поможет сосредоточиться на задачах и улучшит
-                        продуктивность.
-                    </div>
-                    <div class="home__content--item m--two-circle">
-                        <span class="title">Подкасты</span>
-                        Возможность задать вопросы профессионалам из разных областей IT
-                    </div>
-                    <div class="home__content--item m--three-circle">
-                        <span class="title">Новости</span>
-                        Обзоры последних новинок и изменений в IT-индустрии
-                    </div>
-                </div>
-            </div>
-        </div>
-        <Team/>
-        <div class="app__content">
-            <RubricBlock/>
-        </div>
-        <div class="home__social">
-            <div class="home__social--tools">
-                <div class="home__social--description">
-                    <h2 class="h2 m--white">Соц сети</h2>
-                    <div class="text">
-                        Следите за обновлениями и новыми постами на IT Radio, чтобы быть в курсе последних новостей и
-                        событий в мире IT, а также следить за анонсами и обновлениями!
-                    </div>
-                </div>
-                <div class="home__social--btns">
-                    <button class="button m--blur">Telegram</button>
-                    <button class="button m--blur">VKontakte</button>
-                    <button class="button m--blur">Instagram</button>
-                    <button class="button m--blur">YouTube</button>
-                </div>
-            </div>
-        </div>
-        <div class="app__content">
-            <blog/>
-        </div>
+						</div>
+					</div>
+					<div class="home__content">
+						<div class="home__content--item m--one-circle">
+							<span class="title">Музыка</span>
+							Нам важно создать комфортную атмосферу, которая поможет сосредоточиться на задачах и улучшит
+							продуктивность.
+						</div>
+						<div class="home__content--item m--two-circle">
+							<span class="title">Подкасты</span>
+							Возможность задать вопросы профессионалам из разных областей IT
+						</div>
+						<div class="home__content--item m--three-circle">
+							<span class="title">Новости</span>
+							Обзоры последних новинок и изменений в IT-индустрии
+						</div>
+					</div>
+				</div>
+			</div>
+			<Team/>
+			<div class="app__content">
+				<RubricBlock/>
+			</div>
+			<div class="home__social">
+				<div class="home__social--tools">
+					<div class="home__social--description">
+						<h2 class="h2 m--white">Соц сети</h2>
+						<div class="text">
+							Следите за обновлениями и новыми постами на IT Radio, чтобы быть в курсе последних новостей и
+							событий в мире IT, а также следить за анонсами и обновлениями!
+						</div>
+					</div>
+					<div class="home__social--btns">
+						<button class="button m--blur">Telegram</button>
+						<button class="button m--blur">VKontakte</button>
+						<button class="button m--blur">Instagram</button>
+						<button class="button m--blur">YouTube</button>
+					</div>
+				</div>
+			</div>
+			<div class="app__content">
+				<blog/>
+			</div>
+		</template>
     </div>
 </template>
 

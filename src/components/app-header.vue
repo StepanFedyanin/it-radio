@@ -4,7 +4,13 @@
 			<div class="header__logo" @click="next('home')">
 				<img src="@/assets/img/icon/logo.svg" alt="logo"/>
 			</div>
-			<ul class="header__menu">
+			<ul class="header__menu" :class="showMenu&&'m--active'">
+				<div class="header__burger m--active m--menu" @click="handlerShowMenu">
+					<span></span>
+				</div>
+				<div class="header__logo m--menu" @click="next('home')">
+					<img src="@/assets/img/icon/logo.svg" alt="logo"/>
+				</div>
 				<li
 					v-for="(item, key) in menu"
 					:key="key"
@@ -21,6 +27,10 @@
 					<button v-else class="button button-violet" @click="handlerClick(item.action)">{{ user.first_name || user.email }}</button>
 				</li>
 			</ul>
+			<div class="header__burger" @click="handlerShowMenu">
+				<span></span>
+			</div>
+			<div v-if="showMenu" class="app__overlay" @click="handlerShowMenu"></div>
 		</div>
 	</div>
 </template>
@@ -74,19 +84,30 @@ export default {
 					role: 'login',
 					action: 'login',
 					icon: 'm--arrow',
-					title: 'Войти'
+					title: 'Войти',
+					class: 'header__btn'
 				},
 				{
 					name: 'home',
 					role: 'auth',
 					action: 'profile',
+					class: 'header__btn'
 				},
-			]
+			],
+			showMenu: true,
+		}
+	},
+	watch:{
+		'$route':{
+			handler(to){
+				if (this.showMenu){
+					this.showMenu = false;
+				}
+			}
 		}
 	},
 	computed:{
 		user() {
-			console.log(this.$store.state.user)
 			return this.$store.state.user;
 		},
 		menu(){
@@ -109,7 +130,10 @@ export default {
         },
         next(name){
             this.$router.push({name})
-        }
+        },
+		handlerShowMenu(){
+			this.showMenu = !this.showMenu;
+		}
     }
 }
 </script>

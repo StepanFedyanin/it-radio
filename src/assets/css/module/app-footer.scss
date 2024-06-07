@@ -30,6 +30,7 @@
   }
   &__social{
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-between-block);
   }
   &__connection{

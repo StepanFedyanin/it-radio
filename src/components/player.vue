@@ -41,6 +41,7 @@
 
 <script>
 import {audio as Player} from "@/services";
+import {app} from "@/services";
 
 export default {
     name: 'player',
@@ -56,7 +57,7 @@ export default {
 				target: null,
 				volume: 50,
 				progress: 100,
-				live: false
+				live: false,
 			}
 		}
     },
@@ -67,6 +68,11 @@ export default {
 		this.initPlayer();
         // this.$refs.player.addEventListener('timeupdate', this.updateProgress);
     },
+	computed:{
+		user() {
+			return this.$store.state.user;
+		},
+	},
     methods: {
 		initPlayer(){
 			this.player.target = document.createElement('audio')
@@ -88,8 +94,8 @@ export default {
 				const data = jsonData?.pub?.data;
 				if (data.np.station.listen_url!==this.player.target.src){
 					this.player.target.src = data.np.station.listen_url;
+					this.player.live = true;
 				}
-				this.player.live = true;
 				this.currentPlay = data.np.now_playing.song;
 			}
 		},
@@ -111,7 +117,16 @@ export default {
 			}
         },
         handlerFavorites(){
-            this.isFavorites = !this.isFavorites;
+			if (this.user?.id){
+				this.isFavorites = !this.isFavorites;
+				const params = {...this.currentPlay, azura_id:this.currentPlay.id};
+				app.createFavoriteForUser(params).then(()=>{
+
+				})
+			}else {
+				this.$emit('shopAuthentication', true)
+			}
+			
         },
         setVolume(){
 			this.player.volume = this.player.volume === 0? 50: 0;
